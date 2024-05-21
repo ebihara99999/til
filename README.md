@@ -1,2 +1,2 @@
 # til
-This repository is what Today I Learn
+This repository is what Today I Learn.
