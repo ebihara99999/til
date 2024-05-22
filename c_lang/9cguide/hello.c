@@ -2,6 +2,6 @@
 
 int main(void)
 {
-	printf("%d+%d=%d\n", 3, 5, 3+5); // 3+5=8
+	printf("40/13 = %d...%d\n", 40 / 13, 40 % 13);
 	return 0;
 }
