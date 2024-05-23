@@ -1,13 +1,14 @@
 #include <stdio.h>
 
-int main(void)
+int main()
 {
-	int year;
-	scanf("%d", &year);
-	if (year % 4 == 0) {
-		printf("It is an olympic year\n");
-	} else {
-		printf("It is NOT an olympic year\n");
-	}
+	int score;
+	do
+	{
+		printf("Enter a score: \n");
+		scanf("%d", &score);
+	} while (!(score <= 100 && score >= 0));
 
+	printf("Score is %d\n", score);
+	return 0;
 }
