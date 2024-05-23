@@ -1,34 +1,15 @@
 #include <stdio.h>
 
-int is_olympic_year(int);
-
-int main()
+int main(void)
 {
-	int year;
-	printf("Enter a year: \n");
-	scanf("%d", &year);
-	int result = is_olympic_year(year);
+	int array[10];
+	int i;
+	for(i = 0; i < sizeof(array) / sizeof(int); i++) {
+		scanf("%d", &array[i]);
+	}
 
-	if (result == 1)
-	{
-		printf("Olympic year\n");
+	for(int i = sizeof(array) / sizeof(int); i >= 0; i--) {
+		printf("%d\n", array[i]);
 	}
-	else
-	{
-		printf("Not an Olympic year\n");
-	}
-}
-
-int is_olympic_year(int year)
-{
-	int start = 2000;
-
-	if ((year - start) % 4 == 0)
-	{
-		return 1;
-	}
-	else
-	{
-		return 0;
-	}
+	return 0;
 }
