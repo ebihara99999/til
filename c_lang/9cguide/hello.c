@@ -2,10 +2,9 @@
 
 int main(void)
 {
-	float price;
-	int change;
-	price = (int)((198 * 1 + 138 * 2) * 1.05);
-	change = 1000 - price;
-	printf("Change is %d\n", change);
-	return 0;
+		int price;
+		scanf("%d", &price);
+		printf("一割引き: %d, 三割引き: %d, 五割引: %d, 八割引: %d\n",
+						(int)(price * 0.9), (int)(price * 0.7), (int)(price * 0.5), (int)(price * 0.2));
+		return 0;
 }
