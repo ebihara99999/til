@@ -1,15 +1,12 @@
 #include <stdio.h>
+#include <string.h>
 
 int main(void)
 {
-	int array[10];
-	int i;
-	for(i = 0; i < sizeof(array) / sizeof(int); i++) {
-		scanf("%d", &array[i]);
-	}
+	char first_name[32];
+	char last_name[32];
 
-	for(int i = sizeof(array) / sizeof(int); i >= 0; i--) {
-		printf("%d\n", array[i]);
-	}
+	scanf("%32s %32s", first_name, last_name);
+	printf("%s\n", strcat(first_name, last_name));
 	return 0;
 }
