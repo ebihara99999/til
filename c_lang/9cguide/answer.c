@@ -1,38 +1,43 @@
 #include <stdio.h>
+#include <string.h>
 
-int minmax(int array[], int *min, int *max);
+typedef struct
+{
+	char name[256]; /* 名前 */
+	int age;				/* 年齢 */
+	int sex;				/* 性別 */
+
+} person;
+
+int InputPerson(person *pdata);
+int OutputPerson(person *pdata);
 
 int main(void)
 {
-	int i = 0, max = 0, min = 100;
-	int array[10];
-	printf("Enter a number between 0 and 100:\n");
-	printf("Enter -1 to quit\n");
-	do
-	{
-		printf("Number %d:\n", i + 1);
-		scanf("%d", &array[i]);
-		i++;
-	} while (array[i - 1] != -1);
+	person data;
+	person *pdata;
 
-	minmax(array, &min, &max);
-	printf("Max value is %d\nMin value is %d.\n", max, min);
+	pdata = &data; /* 初期化 */
+	InputPerson(pdata);
+	OutputPerson(pdata);
+
 	return 0;
 }
 
-int minmax(int array[], int *min, int *max)
+int InputPerson(person *pdata)
 {
-	int i = 0;
-	while (array[i] != -1)
-	{
-		if (array[i] > *max)
-		{
-			*max = array[i];
-		}
-		if (array[i] < *min)
-		{
-			*min = array[i];
-		}
-		i++;
-	}
+	printf("名前を入力してください\n");
+	scanf("%s", pdata->name);
+	printf("年齢を入力してください\n");
+	scanf("%d", &pdata->age);
+	printf("性別を入力してください。男性は1、女性は2です。\n");
+	scanf("%d", &pdata->sex);
+}
+
+int OutputPerson(person *pdata)
+{
+	printf("名前：%s\n", pdata->name);
+	printf("年齢：%d\n", pdata->age);
+	printf
+		("性別：%s\n", pdata->sex == 1 ? "男性" : "女性");
 }
