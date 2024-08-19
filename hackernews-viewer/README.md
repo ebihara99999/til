@@ -2,6 +2,8 @@
 
 - 📖 [Remix docs](https://remix.run/docs)
 
+This is from: https://codezine.jp/article/detail/17097.
+
 ## Development
 
 Run the dev server:
