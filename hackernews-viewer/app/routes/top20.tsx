@@ -12,15 +12,15 @@ export const loader = async () => {
 
 
   const top20 = await Promise.all(top20Ids.map((id) => getItem(id)));
-  const top20Summary = top20.map((item) => ({
+  const top20Summaries = top20.map((item) => ({
     id: item.id,
     title: item.title,
   }));
-  return top20Summary;
+  return top20Summaries;
 }
 
 export default function Top20Route() {
-  const data = useLoaderData<typeof loader>();
+  const top20Summaries = useLoaderData<typeof loader>();
 
   return (
     <div>
@@ -33,9 +33,9 @@ export default function Top20Route() {
           <nav>
             <ul>
               {
-                data.map((item) => (
-                  <li key={item.id}>
-                    <Link to={`/top20/${item.id}`}>{item.title}</Link>
+                top20Summaries.map((summary) => (
+                  <li key={summary.id}>
+                    <Link to={`/top20/${summary.id}`}>{summary.title}</Link>
                   </li>
                 ))
               }
