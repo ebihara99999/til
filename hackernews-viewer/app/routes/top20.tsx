@@ -1,4 +1,4 @@
-import { useLoaderData, Link } from "@remix-run/react";
+import { useLoaderData, Link, Outlet } from "@remix-run/react";
 import { getItem, getTopStories } from "~/utils/hackerNews.server";
 import stylesUrl from '../styles/top20.css';
 
@@ -12,7 +12,7 @@ export const loader = async () => {
 
 
   const top20 = await Promise.all(top20Ids.map((id) => getItem(id)));
-  const top20Summaries = top20.map((item) => ({
+  const top20Summaries: Summary[] = top20.map((item) => ({
     id: item.id,
     title: item.title,
   }));
@@ -43,6 +43,7 @@ export default function Top20Route() {
           </nav>
         </div>
         <main>
+          <Outlet />
           <div>Show main contents here</div>
         </main>
       </div>

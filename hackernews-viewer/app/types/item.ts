@@ -9,3 +9,5 @@ interface Item {
   type: string;
   url: string;
 }
+
+type Summary = Pick<Item, 'id' | 'title'>;
