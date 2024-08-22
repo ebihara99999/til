@@ -44,7 +44,6 @@ export default function Top20Route() {
         </div>
         <main>
           <Outlet />
-          <div>Show main contents here</div>
         </main>
       </div>
     </div>

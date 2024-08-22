@@ -1,5 +1,5 @@
 interface Item {
-  id: number;
+  id: string;
   title: string;
   by: string;
   descendants: number;
