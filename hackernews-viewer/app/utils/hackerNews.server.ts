@@ -10,3 +10,10 @@ export async function getItem(id: Item["id"]): Promise<Item> {
     (res) => res.json()
   );
 }
+
+/** 記事のコメントデータを取得する */
+export async function getComment(id: Comment["id"]): Promise<Comment> {
+  return fetch(`https://hacker-news.firebaseio.com/v0/item/${id}.json`).then(
+    (res) => res.json()
+  );
+}

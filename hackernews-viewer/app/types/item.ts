@@ -3,7 +3,7 @@ interface Item {
   title: string;
   by: string;
   descendants: number;
-  kids: [number];
+  kids: Comment['id'][];
   score: number;
   time: number;
   type: string;
@@ -11,3 +11,13 @@ interface Item {
 }
 
 type Summary = Pick<Item, 'id' | 'title'>;
+
+interface Comment {
+  by: string;
+  id: string;
+  kids: string[];
+  parent: string;
+  text: string;
+  time: number;
+  type: string;
+}
