@@ -1,1 +1,1 @@
-Answers of https://github.com/donnemartin/system-design-primer/tree/master/solutions/object_oriented_design
+Answers of https://github.com/donnemartin/system-design-primer/tree/master/solutions/object_oriented_design and other general topics.
