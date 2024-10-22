@@ -13,7 +13,7 @@
 
 # @param {ListNode} head
 # @return {Boolean}
-def has_cycle?(head)
+def cycle?(head)
   return false if head.nil?
 
   fast = head.next
